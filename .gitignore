@@ -1,0 +1,35 @@
+__pycache__/
+*.pyc
+
+.idea/
+.vscode/
+.pytest_cache/
+
+# External upstream repository; fetch separately and use tools/prepare_torque_model.py.
+assets/mujoco_menagerie/
+models/franka_emika_panda_torque/
+mujoco_residual_rl_project_spec.md
+
+# Training artifacts and raw experiment outputs are reproducible or too large for normal GitHub commits.
+results/*
+!results/final_multiseed/
+results/final_multiseed/*
+!results/final_multiseed/aggregate/
+!results/final_multiseed/aggregate/*.json
+!results/final_multiseed/aggregate/*.csv
+!results/final_multiseed/aggregate/*.png
+results/**/tensorboard/
+results/**/checkpoints/
+*.pth
+*.pt
+*.zip
+*.pkl
+
+# Raw rollouts can be regenerated. Keep compact JSON/CSV/PNG summaries.
+*.npz
+*.npy
+
+# Local logs and temporary files.
+*.log
+tmp/
+temp/
