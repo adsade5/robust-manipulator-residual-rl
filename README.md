@@ -4,6 +4,18 @@ MuJoCo mechanical arm control and Residual RL robust trajectory tracking.
 
 This project studies whether a bounded Residual PPO policy can compensate trajectory-tracking errors caused by inertial model mismatch while retaining a model-based Computed Torque Controller as the primary controller.
 
+## Quick View
+
+| Item | Details |
+|---|---|
+| Robot | Franka Panda-style 7-DOF arm |
+| Simulator | MuJoCo direct-torque model derived from MuJoCo Menagerie |
+| Nominal Controller | Computed Torque Control with MuJoCo mass matrix and bias terms |
+| RL Policy | Bounded 7D Residual PPO torque correction |
+| Model Mismatch | End-effector inertial scale perturbations from `1.25` to `2.00` |
+| Main Result | `54.52%` to `57.09%` mean motion-RMSE improvement at scales `1.50` to `2.00` across 3 seeds |
+| Limitation | Simulation-only; residual policy degrades the near-perfect nominal case |
+
 ## Overview
 
 Computed Torque Control (CTC) tracks joint trajectories extremely well when the dynamics model is accurate. Under plant/model mismatch, especially end-effector inertial mismatch, the same nominal controller degrades.
