@@ -1,5 +1,7 @@
 # Robust Manipulator Trajectory Tracking with Model-Based Control and Residual Reinforcement Learning
 
+[English](README.md) | [简体中文](README_zh-CN.md)
+
 MuJoCo mechanical arm control and Residual RL robust trajectory tracking.
 
 This project studies whether a bounded Residual PPO policy can compensate trajectory-tracking errors caused by inertial model mismatch while retaining a model-based Computed Torque Controller as the primary controller.
